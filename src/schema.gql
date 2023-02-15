@@ -1,0 +1,31 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Product {
+  id: Int!
+  product_name: String!
+  product_code: String!
+  quantity: Int!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  product: [Product!]!
+}
+
+type Mutation {
+  createProduct(createProductInput: CreateProductInput!): Product!
+}
+
+input CreateProductInput {
+  product_name: String!
+  product_code: String!
+  quantity: Int!
+}
