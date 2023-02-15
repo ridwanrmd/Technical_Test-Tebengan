@@ -10,6 +10,7 @@ import { ProductModule } from './product/product.module';
 import { ApolloDriverConfig, ApolloDriver } from '@nestjs/apollo';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
+import { UsersModule } from './users/users.module';
 
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT } = process.env;
 
@@ -32,6 +33,7 @@ const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT } = process.env;
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
     ProductModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [
